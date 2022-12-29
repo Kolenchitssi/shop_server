@@ -1,4 +1,4 @@
 export const testFunc = () => {
-  const message = 'fff';
+  const message: string = 'fff';
   console.log('Test Func', message);
 };

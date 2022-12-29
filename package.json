@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "main": "./src/index.ts",
   "type": "module",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon",

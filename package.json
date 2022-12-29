@@ -13,14 +13,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js, jsx, ts,tsx}": [
-      "eslint",
-      "prettier --check"
-    ],
-    "*.scss": [
-      "stylelint",
-      "prettier --check"
-    ]
+    "*.{js, jsx, ts,tsx}": "npx eslint"
   },
   "repository": {
     "type": "git",

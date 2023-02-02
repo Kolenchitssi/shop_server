@@ -33,8 +33,9 @@
   "homepage": "https://github.com/Kolenchitssi/shop_server#readme",
   "description": "",
   "devDependencies": {
+    "@types/cors": "^2.8.13",
     "@types/express": "^4.17.15",
-    "@types/node": "^18.11.17",
+    "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "^8.30.0",
@@ -48,11 +49,19 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express-fileupload": "^1.4.1",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/uuid": "^9.0.0",
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.28.0",
+    "uuid": "^9.0.0"
   }
 }

@@ -1,7 +1,17 @@
-import sequelize from '../db';
-import { DataTypes } from 'sequelize';
+import sequelize from '../db.js';
+import { DataTypes, Model, ModelDefined, Optional, InferAttributes, InferCreationAttributes } from 'sequelize';
 
-const User = sequelize.define('user', {
+interface UserAttributes {
+  id: string;
+  email: string;
+  password: string;
+  role: string;
+}
+
+type UserCreationAttributes = Optional<UserAttributes, 'id'>;
+
+// TODO надо разобратся с типизацией этой базы данных postegreSQL или подобрать другу БД с типизацией попроще
+const User: ModelDefined<UserAttributes, UserCreationAttributes> = sequelize.define('user', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   email: { type: DataTypes.STRING, unique: true },
   password: { type: DataTypes.STRING },
@@ -22,6 +32,7 @@ const Device = sequelize.define('device', {
   price: { type: DataTypes.INTEGER, allowNull: false },
   rating: { type: DataTypes.INTEGER, defaultValue: 0 },
   img: { type: DataTypes.STRING, allowNull: false },
+  productionDate: { type: DataTypes.DATE, allowNull: false, defaultValue: new Date() },
 });
 
 const Type = sequelize.define('type', {
@@ -76,7 +87,7 @@ DeviceInfo.belongsTo(Device);
 Type.belongsToMany(Brand, { through: TypeBrand }); //связь много ко многим 2й аргумент таблица для связи типо с брэндом создали см **1
 Brand.belongsToMany(Type, { through: TypeBrand });
 
-module.exports = {
+export const models = {
   User,
   Basket,
   BasketDevice,

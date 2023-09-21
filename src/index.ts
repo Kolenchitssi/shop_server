@@ -32,9 +32,9 @@ const start = async () => {
     await sequelize.authenticate();
     console.log('Соединение с БД было успешно установлено');
     await sequelize.sync({ alter: true });
-    //* User.sync() - создает таблицу при отсутствии (если есть существующая таблица остается неизменной)
-    //* User.sync({ force: true }) - удаляет существующую таблицу и создает новую
-    //* User.sync({ alter: true }) - приводит таблицу в соответствие с моделью
+    //* sequelize.sync() - создает таблицу при отсутствии (если есть существующая таблица остается неизменной)
+    //* sequelize.sync({ force: true }) - удаляет существующую таблицу и создает новую
+    //* sequelize.sync({ alter: true }) - приводит таблицу в соответствие с моделью
     app.listen(PORT, () => {
       console.log(`Server started on port ${PORT}`);
     });

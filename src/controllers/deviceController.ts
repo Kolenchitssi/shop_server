@@ -84,6 +84,15 @@ class DeviceController {
     });
     return res.json(device);
   }
+
+  async delete(req: Request, res: Response) {
+    // const { id } = req.params; //получаем из параметров адресной строки
+    const { id } = req.body; // получаем из тела запроса
+    const device = await Device.destroy({
+      where: { id },
+    });
+    return res.json(device);
+  }
 }
 
 export default new DeviceController();

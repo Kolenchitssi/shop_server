@@ -16,6 +16,13 @@ class BrandController {
     const brands = await Brand.findAll();
     return res.json(brands);
   }
+
+  // todo check working
+  async delete(req: Request, res: Response) {
+    const { id } = req.body;
+    const brands = await Brand.destroy({ where: { id } });
+    return res.json(brands);
+  }
 }
 
 export default new BrandController();
